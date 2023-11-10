@@ -1,8 +1,8 @@
-SELECT c.login,
-       COUNT(o."inDelivery") AS accepted_orders 
-FROM "Couriers" AS c 
-JOIN "Orders" AS o ON c.id=o."courierId"
-WHERE "inDelivery"='t' 
+SELECT с.login,
+       COUNT(*) AS "inDelivery" 
+FROM "Couriers" AS c
+JOIN "Orders" AS о ON c.id=o."courierId" 
+WHERE o."inDelivery" = 't'
 GROUP BY c.login;
 
 SELECT track,
